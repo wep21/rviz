@@ -32,6 +32,7 @@
 
 #include <cstdio>
 
+#include <QIODevice>  // NOLINT: cpplint is unable to handle the include order here
 #include <QMimeData>  // NOLINT: cpplint is unable to handle the include order here
 #include <QStringList>  // NOLINT: cpplint is unable to handle the include order here
 

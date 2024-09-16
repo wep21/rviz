@@ -1,0 +1,23 @@
+name: ROS workspace CI
+
+on: [push, pull_request]
+
+jobs:
+  # build on Windows native
+  build_windows:
+    name: Windows
+
+    runs-on: windows-2019
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup ROS environment
+        uses: ros-tooling/setup-ros@master
+
+      - name: ROS 2 CI Action
+        uses: ros-tooling/action-ros-ci@master
+        with:
+          package-name: rviz_common
+          target-ros2-distro: rolling
+          vcs-repo-file-url: "https://raw.githubusercontent.com/ros2/ros2/rolling/ros2.repos"
